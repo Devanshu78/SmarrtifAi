@@ -3,21 +3,39 @@ import { User } from "../models/userSchema.model.js";
 
 export const authMiddleware = async (req, res, next) => {
   try {
-    const token =
-      req.cookies?.accessToken ||
-      req.header("Authorization").replace("Bearer ", "") ||
-      null;
+    let token = null;
+
+    if (req.cookies?.accessToken) {
+      token = req.cookies.accessToken;
+    } else if (req.headers?.authorization) {
+      const authHeader = req.headers.authorization;
+      if (authHeader.startsWith("Bearer ")) {
+        token = authHeader.split(" ")[1];
+      }
+    }
+
     if (!token) {
-      return res.status(401).json({ message: "No token found" });
+      return res.status(401).json({ message: "No token provided" });
     }
-    const isVerified = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    const user = await User.findById(isVerified?._id);
+
+    let decoded;
+    try {
+      decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    } catch (err) {
+      return res.status(401).json({ message: "Invalid or expired token" });
+    }
+
+    const user = await User.findById(decoded?._id).select("-password");
     if (!user) {
-      res.status(401).json({ msg: "User validation failed" });
+      return res.status(401).json({ message: "User not found" });
     }
+
     req.user = user;
     next();
   } catch (error) {
-    res.status(401).json({ message: "Token for authorization failed !!!" });
+    console.error("Auth middleware error:", error);
+    res
+      .status(500)
+      .json({ message: "Something went wrong in auth middleware" });
   }
 };
