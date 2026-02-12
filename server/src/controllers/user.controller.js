@@ -71,14 +71,14 @@ export const loginUser = async (req, res) => {
     const tokens = await generateTokens(user._id);
     const accessOption = {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000, //  1 days in mili seconds
     };
     const refreshOption = {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in mili seconds
     };
     return res
