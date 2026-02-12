@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d6f1c53e-e1d5-4bcb-9688-0ac609065d33",
+    "name": "Smarrtifai",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29436528"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/health",
+          "host": ["{{server}}"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\" : \"Dustin\",\r\n    \"email\" : \"dustin@gmail.com\",\r\n    \"password\": \"dustinpoo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/signupuser",
+          "host": ["{{server}}"],
+          "path": ["signupuser"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\" : \"dustin@gmail.com\",\r\n    \"password\": \"dustinpoo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/loginuser",
+          "host": ["{{server}}"],
+          "path": ["loginuser"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "is Authenticated",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/isAuthenticated",
+          "host": ["{{server}}"],
+          "path": ["isAuthenticated"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "refresh",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/refresh",
+          "host": ["{{server}}"],
+          "path": ["refresh"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/user",
+          "host": ["{{server}}"],
+          "path": ["user"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Course",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Advanced CSS & Tailwind\",\r\n    \"subtitle\": \"COURSES | Frontend Development\",\r\n    \"description\":\r\n      \"Design beautiful and responsive websites using modern CSS techniques and TailwindCSS.\",\r\n    \"instructor\": {\r\n      \"name\": \"Bob Lee\",\r\n      \"role\": \"UI/UX Designer\",\r\n      \"experience\": \"6+ years experience\"\r\n    },\r\n    \"rating\": 4.8,\r\n    \"reviews\": 650,\r\n    \"category\": \"Design\",\r\n    \"level\": \"Intermediate\",\r\n    \"duration\": \"3 Weeks\",\r\n    \"mode\": \"Online\",\r\n    \"price\": {\r\n      \"original\": 1999,\r\n      \"discounted\": 499\r\n    },\r\n    \"syllabus\": [\r\n      \"Week 1: CSS Fundamentals\",\r\n      \"Week 2: Flexbox & Grid\",\r\n      \"Week 3: TailwindCSS Practical Projects\"\r\n    ],\r\n    \"learning\": [\r\n      \"CSS Layout Techniques\",\r\n      \"Responsive Design\",\r\n      \"TailwindCSS Utilities\",\r\n      \"Creating Beautiful UI\"\r\n    ],\r\n    \"image\":\r\n      \"https://imgs.search.brave.com/2BU0qcbnD-yqz4IFW1iHk2GIy5grl9P8yyFzmJEVFVY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxtYWJldHRlci5j/b20vX25leHQvaW1h/Z2U_dXJsPWh0dHBz/Oi8vZDFmbjZ4dTc1/NHYzMTkuY2xvdWRm/cm9udC5uZXQvVGFp/bHdpbmRfQ2hlYXRf/U2hlZXRfYmM0MzRi/M2M3Yi53ZWJwJnc9/MTkyMCZxPTc1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/course",
+          "host": ["{{server}}"],
+          "path": ["course"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rate Course",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": 4.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/course/698cd122c21103f7b78c6f76/rate",
+          "host": ["{{server}}"],
+          "path": ["course", "698cd122c21103f7b78c6f76", "rate"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Course",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/course/698cd122c21103f7b78c6f76",
+          "host": ["{{server}}"],
+          "path": ["course", "698cd122c21103f7b78c6f76"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Course",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/course/698cd122c21103f7b78c6f76",
+          "host": ["{{server}}"],
+          "path": ["course", "698cd122c21103f7b78c6f76"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "courses",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{server}}/course",
+          "host": ["{{server}}"],
+          "path": ["course"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Enrolled",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{server}}/user/698cd122c21103f7b78c6f76",
+          "host": ["{{server}}"],
+          "path": ["user", "698cd122c21103f7b78c6f76"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Review Course",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"reviews\" : 450\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/course/698cd122c21103f7b78c6f76/review",
+          "host": ["{{server}}"],
+          "path": ["course", "698cd122c21103f7b78c6f76", "review"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "server",
+      "value": ""
+    }
+  ]
+}
