@@ -1,6 +1,6 @@
 # SkillNest – Mini Product Platform Challenge
 
-SkillNest is a mini course discovery platform built as part of the Web Developer & UI/UX assignment. The platform allows users to browse courses, register/login, enroll in courses, and view enrolled courses in their dashboard. Admin users can manage courses through a CRUD dashboard.
+[SkillNest](https://smarrtif-ai.vercel.app/) is a mini course discovery platform built as part of the Web Developer & UI/UX assignment. The platform allows users to browse courses, register/login, enroll in courses, and view enrolled courses in their dashboard.
 
 ## 🚀 Tech Stack
 
@@ -16,12 +16,17 @@ SkillNest is a mini course discovery platform built as part of the Web Developer
 - Course Detail Page
 - Enroll in Course
 - User Dashboard (Enrolled Courses)
-- Admin Dashboard (Create, Update, Delete Courses)
 - Protected Routes
+
+---
+
+> ⚠️ **Note:** The admin section is not implemented in the frontend yet.  
+> However, all the admin API endpoints are created and working properly.  
+> You can test them using the provided [Postman Collection](https://github.com/Devanshu78/SmarrtifAi/blob/main/Smarrtifai.postman_collection.json).
 
 ## 🎨 UI/UX Wireframes
 
-Figma Wireframe Link:👉 **\[https://excalidraw.com/#json=qgqEcpq3r5Yo01G0tcR8y,5z2A4NqHR5xEV7xtdSy8BQ\]**
+Wireframe Link:👉 [UI/UX Wireframes](https://excalidraw.com/#json=qgqEcpq3r5Yo01G0tcR8y,5z2A4NqHR5xEV7xtdSy8BQ)
 
 ### Installation
 
